@@ -1,0 +1,61 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.yed'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'mysql:mysql-connector-java'
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.1.1'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.8'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.1.5.RELEASE'
+    compile group: 'io.springside', name: 'springside-utils', version: '5.0.0-RC1'
+    compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.10-FINAL'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.10-FINAL'
+    compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.10-FINAL'
+    compile group: 'org.apache.commons', name: 'commons-text', version: '1.6'
+    compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.1'
+    compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.17'
+
+
+    //implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    //implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    //implementation 'org.springframework.boot:spring-boot-starter-security'
+    //implementation 'org.springframework.session:spring-session-jdbc'
+    //compileOnly 'org.projectlombok:lombok'
+    //developmentOnly 'org.springframework.boot:spring-boot-devtools' //热部署
+    //annotationProcessor 'org.projectlombok:lombok'
+    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //testImplementation 'org.springframework.security:spring-security-test'
+    //compile group: 'org.springframework.data', name: 'spring-data-commons', version: '2.1.9.RELEASE'
+    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.1.5.RELEASE'
+    //compile group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '6.1'
+
+    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.5.RELEASE'
+    //compile group: 'org.apache.commons', name: 'commons-text', version: '1.6'
+}

@@ -1,0 +1,39 @@
+server:
+  tomcat:
+    max:
+      http:
+        header:
+          size: 10000KB
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: false
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://120.79.193.184:3306/glhf?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+      username: yed
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      ## 初始化大小，最小，最大
+      initialSize: 10
+      minIdle: 20
+      maxActive: 200
+      filter:
+        # 监控统计用的filter
+        stat:
+          enabled: true
+          merge-sql: true
+          slow-sql-millis: 5000
+        # 日志用的filter
+        logback:
+          enabled: true
+        # 防御sql注入的filter
+        wall:
+          enabled: true
+          config:
+            multi-statement-allow: true

@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /glhf
+spring:
+  application:
+    name: glhf
+  profiles:
+    active: dev
+  messages:
+    encoding: utf-8
+    basename: i18n/messages
+
+logging:
+  level:
+    com.yed.glhf.mapper: debug
+
+mybatis-plus:
+  mapperLocations:
+    classpath: mapper/*.xml
+  global-config:
+    db-config:
+      id-type: AUTO
+      field-strategy: ignored
+    refresh: true
+  #    logic-delete-value: 0
+  #    logic-not-delete-value: 1
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+
+
+
+
+
+

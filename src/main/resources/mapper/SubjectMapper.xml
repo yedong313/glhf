@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yed.glhf.mapper.SubjectMapper">
+
+    <!-- 开启二级缓存 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yed.aliyun.glhf.entity.Subject">
+    <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <result column="descript" property="descript" />
+        <result column="all_time" property="allTime" />
+        <result column="right_time" property="rightTime" />
+        <result column="wrong_time" property="wrongTime" />
+        <result column="created_date" property="createdDate" />
+        <result column="last_modifiy_date" property="lastModifiyDate" />
+        <result column="version" property="version" />
+        <result column="enabled" property="enabled" />
+        <result column="remarks" property="remarks" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        name, type, descript, all_time, right_time, wrong_time, created_date, last_modifiy_date, version, enabled, remarks
+    </sql>
+
+</mapper>
