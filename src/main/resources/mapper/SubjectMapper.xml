@@ -6,7 +6,7 @@
     <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.yed.aliyun.glhf.entity.Subject">
+    <resultMap id="BaseResultMap" type="com.yed.glhf.entity.Subject">
     <result column="id" property="id" />
         <result column="name" property="name" />
         <result column="type" property="type" />
@@ -15,7 +15,7 @@
         <result column="right_time" property="rightTime" />
         <result column="wrong_time" property="wrongTime" />
         <result column="created_date" property="createdDate" />
-        <result column="last_modifiy_date" property="lastModifiyDate" />
+        <result column="last_modified_date" property="lastModifiedDate" />
         <result column="version" property="version" />
         <result column="enabled" property="enabled" />
         <result column="remarks" property="remarks" />

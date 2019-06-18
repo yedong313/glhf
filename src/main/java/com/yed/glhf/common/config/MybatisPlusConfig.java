@@ -1,5 +1,7 @@
 package com.yed.glhf.common.config;
 
+import com.baomidou.mybatisplus.core.parser.ISqlParser;
+import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
@@ -9,6 +11,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @EnableTransactionManagement
 @Configuration
@@ -17,21 +22,22 @@ public class MybatisPlusConfig {
 
     /**
      * 分页插件
+     * 攻击 SQL 阻断解析器
      */
+
     @Bean
     public PaginationInterceptor paginationInterceptor() {
-        return new PaginationInterceptor();
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        List<ISqlParser> sqlParserList = new ArrayList<>();
+        // 攻击 SQL 阻断解析器、加入解析链
+        sqlParserList.add(new BlockAttackSqlParser());
+        paginationInterceptor.setSqlParserList(sqlParserList);
+        return paginationInterceptor;
     }
-
     /**
      * 逻辑删除   无需配置了
-     *      @Bean
-     *     public LogicSqlInjector logicSqlInjector() {
-     *         return new LogicSqlInjector();
-     *     }
-     * @return
+     *
      */
-
 
     /**
      * SQL执行效率插件
@@ -52,4 +58,5 @@ public class MybatisPlusConfig {
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {
         return new OptimisticLockerInterceptor();
     }
+
 }

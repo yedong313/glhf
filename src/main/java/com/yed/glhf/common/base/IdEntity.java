@@ -2,23 +2,23 @@ package com.yed.glhf.common.base;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.annotation.TableId;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
-
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 public class IdEntity implements Serializable {
     private static final long serialVersionUID = -2557983456302770267L;
 
     @TableId
+    @ApiModelProperty(value = "主键")
     private String id;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     @Override
     public int hashCode() {

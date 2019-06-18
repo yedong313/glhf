@@ -2,6 +2,7 @@ package com.yed.glhf.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.yed.glhf.common.base.DataEntity;
+import com.yed.glhf.common.enums.SubjectTypeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -27,7 +28,7 @@ public class Subject extends DataEntity {
     private String name;
 
     @ApiModelProperty(value = "题目类型")
-    private String type;
+    private SubjectTypeEnum type;
 
     @ApiModelProperty(value = "题目描述")
     private String descript;

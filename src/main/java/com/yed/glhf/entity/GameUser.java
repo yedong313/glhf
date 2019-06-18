@@ -2,6 +2,7 @@ package com.yed.glhf.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.yed.glhf.common.base.DataEntity;
+import com.yed.glhf.common.enums.YesOrNoEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -27,8 +28,8 @@ public class GameUser extends DataEntity {
     private String mobile;
 
     @ApiModelProperty(value = "是否验证")
-    private Integer verified;
+    private YesOrNoEnum verified;
 
     @ApiModelProperty(value = "是否领取过红包")
-    private Integer gainedRedPack;
+    private YesOrNoEnum gainedRedPack;
 }

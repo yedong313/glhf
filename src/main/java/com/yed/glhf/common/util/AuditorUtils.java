@@ -11,11 +11,11 @@ public class AuditorUtils {
         dataEntity.setEnabled(true);
         dataEntity.setVersion(1);
         dataEntity.setCreatedDate(now);
-        dataEntity.setLastModifiyDate(now);
+        dataEntity.setLastModifiedDate(now);
     }
 
     public static void initLastModifiedInfo(DataEntity dataEntity) {
         LocalDateTime now = LocalDateTime.now();
-        dataEntity.setLastModifiyDate(now);
+        dataEntity.setLastModifiedDate(now);
     }
 }

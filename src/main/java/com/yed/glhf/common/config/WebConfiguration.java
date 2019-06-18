@@ -44,7 +44,8 @@ public class WebConfiguration implements WebMvcConfigurer {
                 SerializerFeature.DisableCircularReferenceDetect,
                 SerializerFeature.WriteMapNullValue,
                 SerializerFeature.WriteNullStringAsEmpty,
-                SerializerFeature.PrettyFormat
+                SerializerFeature.PrettyFormat,
+                SerializerFeature.WriteEnumUsingToString
         );
         // 处理LocalDateTime 返回中 T -> 空格
         ValueFilter valueFilter = (object, name, value) -> {

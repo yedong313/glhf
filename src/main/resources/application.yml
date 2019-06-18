@@ -18,6 +18,7 @@ logging:
 mybatis-plus:
   mapperLocations:
     classpath: mapper/*.xml
+  typeEnumsPackage: com.yed.glhf.common.enums
   global-config:
     db-config:
       id-type: AUTO
