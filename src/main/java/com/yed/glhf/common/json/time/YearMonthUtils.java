@@ -1,4 +1,4 @@
-package com.yed.glhf.common.util.time;
+package com.yed.glhf.common.json.time;
 
 import com.google.common.collect.Maps;
 import com.yed.glhf.common.util.text.StringUtils;
@@ -8,9 +8,7 @@ import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
-/**
- * Created by liuj on 2017/3/31.
- */
+
 public class YearMonthUtils {
 
     public static final String FORMATTER_FULL = "yyyy-MM";

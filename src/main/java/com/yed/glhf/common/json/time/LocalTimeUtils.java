@@ -1,4 +1,4 @@
-package com.yed.glhf.common.util.time;
+package com.yed.glhf.common.json.time;
 
 import com.yed.glhf.common.util.text.StringUtils;
 import org.springside.modules.utils.text.TextValidator;
@@ -8,9 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.regex.Pattern;
 
-/**
- * Created by liuj on 2017/3/31.
- */
+
 public class LocalTimeUtils {
     public static final String FORMATTER_SECOND = "HH:mm:ss";
     public static final String FORMATTER_MINUTE = "HH:mm";

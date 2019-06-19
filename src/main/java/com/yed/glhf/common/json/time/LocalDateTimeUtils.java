@@ -1,4 +1,4 @@
-package com.yed.glhf.common.util.time;
+package com.yed.glhf.common.json.time;
 
 
 import com.yed.glhf.common.util.text.StringUtils;
@@ -11,9 +11,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.regex.Pattern;
 
-/**
- * Created by liuj on 2017/3/31.
- */
+
 public class LocalDateTimeUtils {
     public static final String FORMATTER_SECOND = "yyyy-MM-dd HH:mm:ss";
     public static final String FORMATTER_MINUTE = "yyyy-MM-dd HH:mm";

@@ -1,6 +1,9 @@
 package com.yed.glhf.common.enums;
 
 import com.baomidou.mybatisplus.core.enums.IEnum;
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+import java.util.Objects;
 
 public enum SubjectTypeEnum implements IEnum<Integer> {
     SINGLE_CHOISE(1, "单选题"),
@@ -31,5 +34,18 @@ public enum SubjectTypeEnum implements IEnum<Integer> {
     @Override
     public String toString(){
         return this.getDesc();
+    }
+
+    @JsonCreator
+    public static SubjectTypeEnum getSubjectTypeEnum(Integer value){
+        if(Objects.isNull(value)){
+            return null;
+        }
+        for(SubjectTypeEnum subjectTypeEnum: SubjectTypeEnum.values()){
+            if(subjectTypeEnum.getValue().equals(value)){
+                return subjectTypeEnum;
+            }
+        }
+        return null;
     }
 }

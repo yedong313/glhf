@@ -31,8 +31,8 @@ public class GameUserController {
     @PostMapping(value = "addGameUser")
     public RpcResult<String> addGameUser(@RequestBody GameUser gameUser) {
         RpcResult<String> rpcResult = new RpcResult<>();
-        gameUser.setGainedRedPack(YesOrNoEnum.no);
-        gameUser.setVerified(YesOrNoEnum.yes);
+        // gameUser.setGainedRedPack(YesOrNoEnum.no);
+        // gameUser.setVerified(YesOrNoEnum.yes);
         iGameUserService.save(gameUser);
         rpcResult.setData(gameUser.getId());
         return rpcResult;

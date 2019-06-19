@@ -43,15 +43,22 @@ dependencies {
     compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.17'
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.9'
     compile group: 'org.mybatis', name: 'mybatis-typehandlers-jsr310', version: '1.0.2'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools' //热部署
+
+    //compile group: 'redis.clients', name: 'jedis', version: '3.1.0-m3'
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '2.1.9.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.1.5.RELEASE'
 
 
 
+
+    //implementation 'org.springframework.boot:spring-boot-starter-security'
     //implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     //implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
-    //implementation 'org.springframework.boot:spring-boot-starter-security'
     //implementation 'org.springframework.session:spring-session-jdbc'
     //compileOnly 'org.projectlombok:lombok'
-    //developmentOnly 'org.springframework.boot:spring-boot-devtools' //热部署
+
     //annotationProcessor 'org.projectlombok:lombok'
     //testImplementation 'org.springframework.boot:spring-boot-starter-test'
     //testImplementation 'org.springframework.security:spring-security-test'

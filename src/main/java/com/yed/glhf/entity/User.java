@@ -11,28 +11,27 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 题目主题关联表
+ * 用户表
  * </p>
  *
  * @author yed
- * @since 2019-06-17
+ * @since 2019-06-18
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value = "TopicSubjectRelation对象", description = "题目主题关联表")
-@TableName("topic_subject_relation")
-public class TopicSubjectRelation extends IdEntity {
+@ApiModel(value = "User", description = "用户表")
+@TableName("user")
+public class User extends IdEntity {
 
-    @ApiModelProperty(value = "主题id")
-    private Long topicId;
+    @ApiModelProperty(value = "名称")
+    private String name;
 
-    @ApiModelProperty(value = "题目id")
-    private Long subjectId;
+    @ApiModelProperty(value = "密码")
+    private String password;
 
     @Override
     public String toString() {
         return JSON.toJSONString(this);
     }
-
 }

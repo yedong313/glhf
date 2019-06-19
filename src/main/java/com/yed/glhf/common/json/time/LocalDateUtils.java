@@ -1,4 +1,4 @@
-package com.yed.glhf.common.util.time;
+package com.yed.glhf.common.json.time;
 
 import com.google.common.collect.Lists;
 import com.yed.glhf.common.util.text.StringUtils;
@@ -8,9 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
-/**
- * Created by liuj on 2017/3/31.
- */
+
 public class LocalDateUtils {
 
     public static final String FORMATTER = "yyyy-MM-dd";

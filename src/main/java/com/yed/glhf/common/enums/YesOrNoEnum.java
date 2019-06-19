@@ -1,6 +1,9 @@
 package com.yed.glhf.common.enums;
 
 import com.baomidou.mybatisplus.core.enums.IEnum;
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+import java.util.Objects;
 
 public enum YesOrNoEnum implements IEnum<Integer> {
     yes(1, "是"),
@@ -30,5 +33,18 @@ public enum YesOrNoEnum implements IEnum<Integer> {
     @Override
     public String toString() {
         return this.getDesc();
+    }
+
+    @JsonCreator
+    public static YesOrNoEnum getYesOrNoEnum(Integer value) {
+        if (Objects.isNull(value)) {
+            return null;
+        }
+        for (YesOrNoEnum yesOrNoEnum : YesOrNoEnum.values()) {
+            if (yesOrNoEnum.getValue().equals(value)) {
+                return yesOrNoEnum;
+            }
+        }
+        return null;
     }
 }

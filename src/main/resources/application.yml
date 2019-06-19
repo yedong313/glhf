@@ -1,8 +1,30 @@
+logging:
+  #  file: log.txt #控制台日志输出文件
+  #  path: c:// #控制台日志输出目录
+  #  file:
+  #    max-size:
+  #    max-history:
+  level:
+    com.yed.glhf.mapper: debug #mybatis plus打印sql
+#    root: debug
+
+
+
+
 server:
   port: 8080
   servlet:
     context-path: /glhf
+  address: localhost
+
+
+
+
 spring:
+#  security:
+#    user:
+#      name: yed
+#      password: 123456
   application:
     name: glhf
   profiles:
@@ -10,10 +32,25 @@ spring:
   messages:
     encoding: utf-8
     basename: i18n/messages
+  redis:
+    glhf:
+      host: 120.79.193.184
+      password: 123456
+      port: 6379
+      database: 1
+      max-idle: 100
+      max-total: 200
+      max-wait-millis: 2000
+      block-when-exhausted: false
+      timeout: 15000ms
+      expire: 864000
+      jedis:
+        pool:
+          max-active: 50
+          max-idle: 20
+          min-idle: 10
+          max-wait: 15000ms
 
-logging:
-  level:
-    com.yed.glhf.mapper: debug
 
 mybatis-plus:
   mapperLocations:
