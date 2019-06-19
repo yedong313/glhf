@@ -1,10 +1,7 @@
-package com.yed.glhf.entity;
+package com.yed.glhf.form;
 
 import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.yed.glhf.common.base.entity.IdEntity;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.yed.glhf.common.base.form.IdForm;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -20,14 +17,10 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value = "UserForm", description = "用户表")
-@TableName("user")
-public class User extends IdEntity {
+public class UserForm extends IdForm {
 
-    @ApiModelProperty(value = "名称")
     private String name;
 
-    @ApiModelProperty(value = "密码")
     private String password;
 
     @Override

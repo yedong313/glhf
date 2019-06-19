@@ -2,7 +2,7 @@ package com.yed.glhf.entity;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.yed.glhf.common.base.IdEntity;
+import com.yed.glhf.common.base.entity.IdEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

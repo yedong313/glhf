@@ -1,4 +1,4 @@
-package com.yed.glhf.common.base;
+package com.yed.glhf.common.base.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

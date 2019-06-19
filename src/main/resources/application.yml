@@ -50,6 +50,8 @@ spring:
           max-idle: 20
           min-idle: 10
           max-wait: 15000ms
+  main:
+    allow-bean-definition-overriding: true
 
 
 mybatis-plus:
@@ -65,6 +67,8 @@ mybatis-plus:
   #    logic-not-delete-value: 1
   configuration:
     map-underscore-to-camel-case: true
+    defaultEnumTypeHandler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+
 
 
 

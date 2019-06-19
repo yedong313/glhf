@@ -21,10 +21,11 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    //implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     runtimeOnly 'mysql:mysql-connector-java'
     compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.1.1'
@@ -35,9 +36,6 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.1.5.RELEASE'
     compile group: 'io.springside', name: 'springside-utils', version: '5.0.0-RC1'
     compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
-    compile group: 'org.apache.poi', name: 'poi', version: '3.10-FINAL'
-    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.10-FINAL'
-    compile group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.10-FINAL'
     compile group: 'org.apache.commons', name: 'commons-text', version: '1.6'
     compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.1'
     compile group: 'com.alibaba', name: 'druid-spring-boot-starter', version: '1.1.17'
@@ -47,8 +45,12 @@ dependencies {
 
     //compile group: 'redis.clients', name: 'jedis', version: '3.1.0-m3'
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
-    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '2.1.9.RELEASE'
+    //compile group: 'org.springframework.data', name: 'spring-data-redis', version: '2.1.9.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.1.5.RELEASE'
+
+    // easypoi
+    compile group: 'cn.afterturn', name: 'easypoi-spring-boot-starter', version: '4.0.0'
+
 
 
 

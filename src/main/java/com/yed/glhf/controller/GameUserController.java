@@ -1,15 +1,23 @@
 package com.yed.glhf.controller;
 
 
+import com.google.common.collect.Lists;
 import com.yed.glhf.common.enums.YesOrNoEnum;
 import com.yed.glhf.common.rpc.RpcResult;
+import com.yed.glhf.common.util.easypoi.ExcelUtil;
+import com.yed.glhf.common.util.mapper.BeanUtils;
 import com.yed.glhf.entity.GameUser;
+import com.yed.glhf.form.GameUserForm;
 import com.yed.glhf.service.IGameUserService;
+import com.yed.glhf.view.GameUserView;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * <p>
@@ -27,12 +35,11 @@ public class GameUserController {
     private IGameUserService iGameUserService;
 
     @ApiOperation(value = "添加游戏用户", notes = "根据gameUser添加游戏用户")
-    @ApiImplicitParam(name = "gameUser", value = "游戏用户实体gameUser", required = true, dataType = "GameUser")
+    @ApiImplicitParam(name = "gameUserForm", value = "游戏用户实体gameUserForm", required = true, dataType = "GameUserForm")
     @PostMapping(value = "addGameUser")
-    public RpcResult<String> addGameUser(@RequestBody GameUser gameUser) {
+    public RpcResult<String> addGameUser(@RequestBody GameUserForm gameUserForm) {
         RpcResult<String> rpcResult = new RpcResult<>();
-        // gameUser.setGainedRedPack(YesOrNoEnum.no);
-        // gameUser.setVerified(YesOrNoEnum.yes);
+        GameUser gameUser = BeanUtils.deepCopy(gameUserForm, GameUser.class);
         iGameUserService.save(gameUser);
         rpcResult.setData(gameUser.getId());
         return rpcResult;
@@ -42,11 +49,25 @@ public class GameUserController {
     @ApiOperation(value = "查询一个游戏用户", notes = "根据id查询游戏用户")
     @ApiImplicitParam(name = "id", value = "游戏用户id", required = true, dataType = "String")
     @GetMapping(value = "getGameUser/{id}")
-    public RpcResult<GameUser> getGameUser(@PathVariable("id") String id) {
-        RpcResult<GameUser> rpcResult = new RpcResult<>();
+    public RpcResult<GameUserView> getGameUser(@PathVariable("id") String id) {
+        RpcResult<GameUserView> rpcResult = new RpcResult<>();
         GameUser byId = iGameUserService.getById(id);
-        rpcResult.setData(byId);
+        GameUserView gameUserView = BeanUtils.deepCopy(byId, GameUserView.class);
+        rpcResult.setData(gameUserView);
         return rpcResult;
     }
+
+    @ApiOperation(value = "导出", notes = "导出数据")
+    @ApiImplicitParam()
+    @GetMapping("export")
+    public void export(HttpServletResponse response) {
+        GameUser byId = iGameUserService.getById(3);
+        GameUserView gameUserView = BeanUtils.deepCopy(byId, GameUserView.class);
+        List<GameUserView> list = Lists.newArrayList(gameUserView);
+        ExcelUtil.exportExcel(list, "测试名", "什么名字", GameUserView.class, "测试.xls", response);
+    }
+
+
+
 
 }

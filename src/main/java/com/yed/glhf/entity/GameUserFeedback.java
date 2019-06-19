@@ -1,7 +1,7 @@
 package com.yed.glhf.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.yed.glhf.common.base.DataEntity;
+import com.yed.glhf.common.base.entity.DataEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
