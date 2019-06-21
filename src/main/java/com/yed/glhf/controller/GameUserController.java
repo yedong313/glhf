@@ -2,7 +2,6 @@ package com.yed.glhf.controller;
 
 
 import com.google.common.collect.Lists;
-import com.yed.glhf.common.enums.YesOrNoEnum;
 import com.yed.glhf.common.rpc.RpcResult;
 import com.yed.glhf.common.util.easypoi.ExcelUtil;
 import com.yed.glhf.common.util.mapper.BeanUtils;
@@ -16,7 +15,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -68,6 +69,19 @@ public class GameUserController {
     }
 
 
+    @ApiOperation(value = "测试redis session", notes = "测试redis session")
+    @ApiImplicitParam()
+    @GetMapping("sessionTest")
+    public void sessionTest(HttpServletRequest request) {
+        //GameUser byId = iGameUserService.getById(3);
+        //GameUserView gameUserView = BeanUtils.deepCopy(byId, GameUserView.class);
+        //List<GameUserView> list = Lists.newArrayList(gameUserView);
+        //ExcelUtil.exportExcel(list, "测试名", "什么名字", GameUserView.class, "测试.xls", response);
+        HttpSession session = request.getSession();
+        session.setAttribute("test1", "nimahai1");
+        session.setAttribute("test2", "nimahai2");
+        return;
+    }
 
 
 }
