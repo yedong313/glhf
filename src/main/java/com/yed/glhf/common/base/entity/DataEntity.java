@@ -43,5 +43,8 @@ public class DataEntity extends IdEntity {
     @Version
     @TableField(fill = FieldFill.INSERT)
     @ApiModelProperty(value = "乐观锁标识")
+    /**
+     * 使用mybatis plus自带的更新方法使用乐观锁时有一点需要特别注意
+     */
     private Integer version;
 }

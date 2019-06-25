@@ -73,10 +73,6 @@ public class GameUserController {
     @ApiImplicitParam()
     @GetMapping("sessionTest")
     public void sessionTest(HttpServletRequest request) {
-        //GameUser byId = iGameUserService.getById(3);
-        //GameUserView gameUserView = BeanUtils.deepCopy(byId, GameUserView.class);
-        //List<GameUserView> list = Lists.newArrayList(gameUserView);
-        //ExcelUtil.exportExcel(list, "测试名", "什么名字", GameUserView.class, "测试.xls", response);
         HttpSession session = request.getSession();
         session.setAttribute("test1", "nimahai1");
         session.setAttribute("test2", "nimahai2");
